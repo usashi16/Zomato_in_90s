@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geetham Veg Restaurant - Order Your Meal</title>
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            background-color: #e6ffe6;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background-color: #006400;
+            color: #fff;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            border-bottom: 5px solid black;
+            border-bottom-style: dashed;
+        }
+        form {
+            display: inline-block;
+            background-color: #fff;
+            border: 3px solid #006400;
+            padding: 20px;
+            text-align: left;
+            box-shadow: 5px 5px 15px #888;
+            width: 300px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+            font-family: "Arial", sans-serif;
+            font-size: 14px;
+            border: 2px solid #ccc;
+        }
+        button {
+            background-color: #32cd32;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #228b22;
+        }
+        .receipt {
+            margin-top: 20px;
+            background-color: #fff;
+            border: 2px solid #ff2b06;
+            padding: 20px;
+            display: inline-block;
+            text-align: left; /* Default to left text alignment */
+            box-shadow: 5px 5px #888888;
+            font-family: "Courier New", monospace;
+            width: 300px;
+            margin-left: auto; /* Center the receipt horizontally */
+            margin-right: auto; /* Center the receipt horizontally */
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#left{
+    width: 100px;
+    height: 60px;
+    float: left;
+    padding: 20px 20px;
+    font-size: 16px;
+    text-decoration: none;
+}
+.right {
+    display: flex; /* Ensures links are in a row */
+    gap: 15px;
+    justify-content:center;
+    
+  }
+
+  #right2{
+    width: 100px;
+    height: 60px;
+    padding: 20px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    display: flex; /* Ensures links are in a row */
+    gap: 15px;
+    justify-content:center;
+}
+    </style>
+</head>
+<body>
+    <header class="container">
+        <button id="left" class="back-btn" onclick="window.location.href='order.html'">Back</button>
+        <h1>Welcome to Geetham Veg Restaurant</h1>
+        <button id="right2" class="back-btn" onclick="window.location.href='index.html'">Home</button>
+    </header>
+
+    <form id="orderForm">
+        <label for="customerName">Name:</label>
+        <input type="text" id="customerName" placeholder="Enter your name" required>
+
+        <label for="customerAddress">Address:</label>
+        <input type="text" id="customerAddress" placeholder="Enter your address" required>
+
+        <label for="dish">Meal:</label>
+        <select id="dish" required>
+            <option value="">Select a meal</option>
+            <option value="Veg Thali">Veg Thali - ₹150</option>
+            <option value="Paneer Butter Masala">Paneer Butter Masala - ₹180</option>
+            <option value="Masala Dosa">Masala Dosa - ₹90</option>
+            <option value="Idli Vada Combo">Idli Vada Combo - ₹80</option>
+            <option value="Veg Fried Rice">Veg Fried Rice - ₹120</option>
+        </select>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" min="1" placeholder="Enter quantity" required>
+
+        <button type="button" onclick="generateReceipt()">Submit</button>
+    </form>
+
+    <div class="receipt" id="receipt" style="display: none;">
+        <h2>Receipt</h2>
+        <pre id="receiptContent"></pre>
+    </div>
+
+    <script>
+        const mealPrices = {
+            "Veg Thali": 150,
+            "Paneer Butter Masala": 180,
+            "Masala Dosa": 90,
+            "Idli Vada Combo": 80,
+            "Veg Fried Rice": 120
+        };
+
+        function generateReceipt() {
+            const customerName = document.getElementById('customerName').value.trim();
+            const customerAddress = document.getElementById('customerAddress').value.trim();
+            const dish = document.getElementById('dish').value;
+            const quantity = parseInt(document.getElementById('quantity').value.trim(), 10);
+
+            if (!customerName || !customerAddress || !dish || isNaN(quantity)) {
+                alert('Please fill in all the details!');
+                return;
+            }
+
+            const price = mealPrices[dish] * quantity;
+            const receipt = `Geetham Veg Restaurant Receipt\n-------------------------------------\n` +
+                `Name: ${customerName}\n` +
+                `Address: ${customerAddress}\n` +
+                `Meal: ${dish}\n` +
+                `Quantity: ${quantity}\n` +
+                `Price: ₹${price}\n` +
+                `-------------------------------------\nTotal Price: ₹${price}`;
+
+            document.getElementById('receiptContent').textContent = receipt;
+            document.getElementById('receipt').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

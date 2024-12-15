@@ -1,0 +1,307 @@
+.section1{
+    font-size: 20px;
+    background-image: url('b1.png');
+    background-size: cover;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+h1{
+  font-size: 80px;
+  text-align: center;
+  font-style: bold ;
+  padding: 0%;
+}
+p{
+  text-align: center;
+}
+
+html {
+  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABFklEQVRYR9WXURLDIAhE6/0PbSdOtUpcd1Gnpv1KGpTHBpCE1/cXq+vrMph7dGvXZTtpfW10DCA5jrH1H0Jhs5E0hnZdCR+vb5S8Nn8mQCeS9BdSalYJqMBjAGzq59xAESN7VFVUgV8AZB/dZBR7QTFDCqGquvUBVVoEtgIwpQRzmANSFHgWQKExHdIrPeuMvQNDarXe6nC/AutgV3JW+6bgqQLeV8FekRtgV+ToDKEKnACYKsfZjjkam7a0ZpYTytwmgainpC3HvwBocgKOxqRjehoR9DFKNFYtOwCGYCszobeCbl26N6yyQ6g8X/Wex/rBPsNEV6qAMaJPMynIHQCoSqS9JSMmwef51LflTgCRszU7DvAGiV6mHWfsaVUAAAAASUVORK5CYII=), auto;
+}
+.s1ul {
+    list-style-type: none ;
+    display: flex;
+    justify-content: space-between; /* Ensures space between left and right sections */
+    align-items: center; /* Aligns items vertically */
+    padding: 10px 20px;
+    background-color: #fe3838;
+    color: white;
+    border: 10px solid black;
+    border-style:groove;
+  }
+  
+  .right {
+    display: flex; /* Ensures links are in a row */
+    gap: 15px;
+  }
+  
+
+  li a {
+    display: flex;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABFklEQVRYR9WXURLDIAhE6/0PbSdOtUpcd1Gnpv1KGpTHBpCE1/cXq+vrMph7dGvXZTtpfW10DCA5jrH1H0Jhs5E0hnZdCR+vb5S8Nn8mQCeS9BdSalYJqMBjAGzq59xAESN7VFVUgV8AZB/dZBR7QTFDCqGquvUBVVoEtgIwpQRzmANSFHgWQKExHdIrPeuMvQNDarXe6nC/AutgV3JW+6bgqQLeV8FekRtgV+ToDKEKnACYKsfZjjkam7a0ZpYTytwmgainpC3HvwBocgKOxqRjehoR9DFKNFYtOwCGYCszobeCbl26N6yyQ6g8X/Wex/rBPsNEV6qAMaJPMynIHQCoSqS9JSMmwef51LflTgCRszU7DvAGiV6mHWfsaVUAAAAASUVORK5CYII=), auto;
+  }
+  
+  li a:hover {
+    background-color: #c62b2b;
+  }
+
+  .searchbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+  }
+
+  .searchbox input[type="search"] {
+    padding: 10px;
+    width: 300px;
+    border: 10px solid black;
+    border-style:groove;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .searchbox button {
+    padding: 10px 15px;
+    margin-left: 5px;
+    background-color: #fe3838;
+    border: 10px solid black;
+    border-style:groove;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .searchbox button:hover {
+    background-color: #c62b2b;
+  }
+
+  .form button:hover {
+    background-color: #c62b2b;
+  }
+
+  .section2{
+    font-size: 20px;
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+
+  .s2container{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #fe3838;
+    padding: 30px;
+    border-top: 5px solid black;
+    border-top-style: dashed;
+    border-bottom: 5px solid black;
+    border-bottom-style: dashed;
+  }
+  .s2item{
+    background-color: #ffd76a;
+    height: 300px;
+    width: 350px;
+    display: grid;
+    align-items: center;
+    border: 10px solid black;
+    border-style:groove;
+  }
+  .s2item:hover {
+    background-color: #e8c35e;
+  }
+
+  .imgs1{
+    background-size: cover;
+    height: 200px;
+
+      width: 300px;
+      margin: 21px;
+      margin-top: 2px;
+   
+      border: 1px solid #f80a0a;
+      border-radius: 4px;
+      overflow: hidden;
+  }
+
+  .section3{
+    font-size: 15px;
+    font-family: "Lucida Console", "Courier New", monospace;
+    background-color: #ffd76a;
+  }
+
+  .collec{
+    align-items: baseline;
+    background-color: #ffd76a;
+    padding-top: 20px;
+    
+    padding-bottom: 0px;
+    font-size: 20px;
+  font-family: "Lucida Console", "Courier New", monospace;
+  }
+
+  .s3container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    justify-content: space-evenly;
+    background-color: #ffd76a;
+    padding: 30px;
+    border-bottom: 5px solid black;
+    border-bottom-style: dashed;
+  }
+  .s3item{
+    height: 350px;
+    width: 250px;
+    display: grid;
+    align-items: center;
+    color: white;
+    background-color: #fe3838;
+    border: 10px solid rgba(245, 222, 90, 0.879);
+    border-style:groove;
+  }
+  .s3item:hover {
+    background-color:  #c62b2b;
+  }
+
+  .imgs3{
+    background-size: cover;
+    height: 200px;
+
+      width: 200px;
+      margin: 21px;
+      margin-top: 2px;
+   
+      border: 1px solid #f80a0a;
+      border-radius: 4px;
+      overflow: hidden;
+  }
+#section4{
+  background-color: #e0812d;
+  padding-top: 2px;
+  font-size: 20px;
+  font-family: "Lucida Console", "Courier New", monospace;
+  border-bottom: 5px solid black;
+    border-bottom-style: dashed;
+}
+h2{
+  padding-left: 30px;
+}
+.form{
+  padding-left: 30px;
+}
+.form button {
+  padding: 10px 15px;
+  margin-left: 5px;
+  background-color: #fe3838;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.s4container{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.gif{
+  float: right;
+}
+
+#s56{
+  background-color:#fe3838;
+  border-bottom: 5px solid black;
+    border-bottom-style: dashed;
+    font-size: 20px;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+.container {
+  width: 80%;
+  max-width: 800px;
+  margin: 20px auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.toggle-button {
+  border: none;
+  background: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.content {
+  padding: 20px;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.hidden {
+  max-height: 0; /* Collapsed height */
+  opacity: 0; /* Hidden visually */
+  overflow: hidden; /* Prevent scrolling of hidden content */
+  padding: 0; /* Remove extra space when hidden */
+}
+
+.restaurant-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 items in a row */
+  gap: 10px;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.restaurant-list li {
+  flex: 1 1 30%; /* Adjust percentage for spacing */
+  text-align: center;
+  color: #555;
+}
+
+#about{
+  font-size: 20px;
+  font-family: "Lucida Console", "Courier New", monospace;
+  background-color: #ffd76a;
+  padding-top: 5px;
+  padding-bottom: 0%;
+}
+
+.gif2{
+  float: left;
+}
+#footer{
+  font-size: 15px;
+  font-family: "Lucida Console", "Courier New", monospace;
+  background-color:#fe3838;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  border: 10px solid black;
+    border-style:groove;
+}
+
+.order{
+
+    font-size: 20px;
+    background-color: #ffd76a;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+

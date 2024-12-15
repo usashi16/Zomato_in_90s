@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbucks - Order Your Coffee</title>
+    <style>
+        body {
+            font-family: "Arial, sans-serif";
+            background-color: #f3f1e7; /* Soft beige */
+            color: #1e3932; /* Starbucks green text */
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background-color: #1e3932; /* Starbucks green */
+            color: #fff;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            border-bottom: 5px solid black;
+            border-bottom-style: dashed;
+        }
+        form {
+            display: inline-block;
+            background-color: #fff;
+            border: 2px solid #1e3932;
+            padding: 20px;
+            text-align: left;
+            box-shadow: 5px 5px #888888;
+            width: 300px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+            font-family: "Arial, sans-serif";
+            font-size: 14px;
+            border: 2px solid #8c746a; /* Brown coffee tone */
+        }
+        button {
+            background-color: #00704a; /* Starbucks green */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            font-size: 1em;
+        }
+        button:hover {
+            background-color: #004c34; /* Darker green */
+        }
+        .receipt {
+            margin-top: 20px;
+            background-color: #fff;
+            border: 2px solid #ff2b06;
+            padding: 20px;
+            display: inline-block;
+            text-align: left; /* Default to left text alignment */
+            box-shadow: 5px 5px #888888;
+            font-family: "Courier New", monospace;
+            width: 300px;
+            margin-left: auto; /* Center the receipt horizontally */
+            margin-right: auto; /* Center the receipt horizontally */
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#left{
+    width: 100px;
+    height: 60px;
+    float: left;
+    padding: 20px 20px;
+    font-size: 16px;
+    text-decoration: none;
+}
+.right {
+    display: flex; /* Ensures links are in a row */
+    gap: 15px;
+    justify-content:center;
+    
+  }
+
+  #right2{
+    width: 100px;
+    height: 60px;
+    padding: 20px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    display: flex; /* Ensures links are in a row */
+    gap: 15px;
+    justify-content:center;
+}
+    </style>
+</head>
+<body>
+    <header class="container">
+        <button id="left" class="back-btn" onclick="window.location.href='order.html'">Back</button>
+        <h1>Welcome to Starbucks</h1>
+        <button id="right2" class="back-btn" onclick="window.location.href='index.html'">Home</button>
+    </header>
+
+    <form id="orderForm">
+        <label for="customerName">Name:</label>
+        <input type="text" id="customerName" placeholder="Enter your name" required>
+
+        <label for="customerAddress">Address:</label>
+        <input type="text" id="customerAddress" placeholder="Enter your address" required>
+
+        <label for="dish">Drink or Food Item:</label>
+        <select id="dish" required>
+            <option value="">Select an item</option>
+            <option value="Caramel Macchiato">Caramel Macchiato - ₹130</option>
+            <option value="Caffe Latte">Caffe Latte - ₹110</option>
+            <option value="Iced Americano">Iced Americano - ₹100</option>
+            <option value="Croissant">Croissant - ₹80</option>
+            <option value="Blueberry Muffin">Blueberry Muffin - ₹90</option>
+        </select>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" min="1" placeholder="Enter quantity" required>
+
+        <button type="button" onclick="generateReceipt()">Submit</button>
+    </form>
+
+    <div class="receipt" id="receipt" style="display: none;">
+        <h2>Receipt</h2>
+        <pre id="receiptContent"></pre>
+    </div>
+
+    <script>
+        const menuPrices = {
+            "Caramel Macchiato": 130,
+            "Caffe Latte": 110,
+            "Iced Americano": 100,
+            "Croissant": 80,
+            "Blueberry Muffin": 90
+        };
+
+        function generateReceipt() {
+            const customerName = document.getElementById('customerName').value.trim();
+            const customerAddress = document.getElementById('customerAddress').value.trim();
+            const dish = document.getElementById('dish').value;
+            const quantity = parseInt(document.getElementById('quantity').value.trim(), 10);
+
+            if (!customerName || !customerAddress || !dish || isNaN(quantity)) {
+                alert('Please fill in all the details!');
+                return;
+            }
+
+            const price = menuPrices[dish] * quantity;
+            const receipt = `Starbucks Receipt\n-------------------------------------\n` +
+                `Customer: ${customerName}\n` +
+                `Address: ${customerAddress}\n` +
+                `Item: ${dish}\n` +
+                `Quantity: ${quantity}\n` +
+                `Total Price: ₹${price}\n` +
+                `-------------------------------------\nThank you for choosing Starbucks!`;
+
+            document.getElementById('receiptContent').textContent = receipt;
+            document.getElementById('receipt').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
